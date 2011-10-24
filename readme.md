@@ -12,3 +12,7 @@ If you want to convert your XSplit recordings into asf you will need to make a s
 3. Make the link (mklink /J xsplit d:\fraps\xsplit\) !! The folder inside twitchtv2asf must be named xsplit in order to work !!
 
 Thats it.
+
+# Video tutorial.
+
+<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/_PVExv3357U?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/_PVExv3357U?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
