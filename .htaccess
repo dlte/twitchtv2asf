@@ -2,6 +2,6 @@ AuthName "Enter Password"
 AuthType Basic
 
 #Change this path to where your .htpasswd file is located.
-AuthUserFile c:\change\me\.htpasswd
+AuthUserFile c:\wamp\www\twitchtv2asf\.htpasswd
 
 require valid-user
