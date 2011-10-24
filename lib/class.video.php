@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL ^ E_NOTICE);
 Class Video 
 {
 	public function getVideos($user) 
@@ -13,7 +13,22 @@ Class Video
 		{
 			while (false !== ($file = @readdir($handle))) 
 			{
-				if(preg_match("/.asf/",$file))
+				
+				if(end(explode('.',$file))=='asf')
+				{
+					$list[]=array('name'=>$file,'image'=>str_replace('asf','jpg',$file));
+				}
+		 	}
+		}
+		return $list;
+	}
+	public function getXsplitVideos($dir="../xsplit/")
+	{
+		if ($handle = @opendir($dir)) 
+		{
+			while (false !== ($file = @readdir($handle))) 
+			{
+				if(preg_match("/.flv/",$file))
 				{
 					$list[]=array('name'=>$file,'image'=>str_replace('asf','jpg',$file));
 				}
@@ -43,11 +58,35 @@ Class Video
 		{
 			foreach($list as $k => $v) 
 			{
+				$filesize += sprintf("%u", @filesize("../converted/".$v['name']));
+				$filesize = round(($filesize/1024)/1024);
 				$html .= "<div class=\"converted\" style=\"background-image:url(converted/{$v[image]})\" id=\"{$v[name]}\">";
 				$html .= "<span class=\"title done\">".$v['name']."</span>";
-				$html .= "<span class=\"title size\">Size: ".round((filesize("../converted/".$v['name'])/1024)/1024)."mb</span>";
+				$html .= "<span class=\"title size\">Size: ".$filesize."mb</span>";
 				$html .= "<span class=\"title\"><a href=\"converted/".$v['name']."\">download</a></span>";
 				$html .= "<div class=\"delete\"></div>";
+				$html .= "</div>";
+			}
+		}
+		else
+		{
+			$html = "No videos converted yet.";
+		}
+		return $html;
+	}
+	public function listXsplitVids()
+	{		
+		if($list=array_reverse($this->getXsplitVideos()))
+		{
+			foreach($list as $k => $v) 
+			{
+				$filesize += sprintf("%u", @filesize("../xsplit/".$v['name']));
+				$filesize = round(($filesize/1024)/1024);
+				$exists = file_exists("../converted/".str_replace('.flv','.asf',$v['name'])) ? "1":"0";
+				$html .= "<div class=\"xsplit\" id=\"{$v[name]}\"><p>";
+				$html .= $v['name'];
+				$html .= "<br/> Size: ".$filesize."mb</p>";
+				$html .= $exists ?  "":"<span class=\"xsplit-title\"><a href=\"convert.php?file=".$v['name']."&type=xsplit\"  vidid=\"xsplit\" part=\"".$v['name']."\" filename=\"".$v['name']."\">convert</a></span>";
 				$html .= "</div>";
 			}
 		}

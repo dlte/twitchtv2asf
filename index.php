@@ -32,8 +32,11 @@
 </div>
 <div style="clear:both;"></div>
 <h1 page="converted.php" id="converted">Converted</h1> 
-<?php if($_COOKIE['user']):?>
-<h1 page="recordings.php" id="recordings">Recordings</h1>
+<?php if(is_dir("xsplit")):?>
+<h1 page="xsplit.php" id="xsplit">XSplit</h1>
+<?php endif;?>
+<?php if(@$_COOKIE['user']):?>
+<h1 page="recordings.php" id="recordings">Twitch.tv</h1>
 <?php endif;?>
 <div id="list"><?php include "converted.php";?></div>
 </div>
