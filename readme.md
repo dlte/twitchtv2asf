@@ -15,4 +15,4 @@ Thats it.
 
 # Video tutorial.
 
-http://www.youtube.com/watch?v=_PVExv3357U
+http://youtu.be/_PVExv3357U
