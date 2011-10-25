@@ -19,4 +19,4 @@ http://youtu.be/_PVExv3357U
 
 # Current limitations
 
-1. Can only convert one file at a time.
+- Can only convert one file at a time.
