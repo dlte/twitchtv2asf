@@ -76,7 +76,7 @@ Class Video
 	}
 	public function listXsplitVids()
 	{		
-		if($list=array_reverse($this->getXsplitVideos()))
+		if($list=@array_reverse($this->getXsplitVideos()))
 		{
 			foreach($list as $k => $v) 
 			{
@@ -92,7 +92,7 @@ Class Video
 		}
 		else
 		{
-			$html = "No videos converted yet.";
+			$html = "No videos found.";
 		}
 		return $html;
 	}
