@@ -39,7 +39,7 @@
 <h1 page="recordings.php" id="recordings">Twitch.tv</h1>
 <?php endif;?>
 <div id="list"><?php include "converted.php";?></div>
-<div id="footer">Made by delete 2011 (<a href="mailto:manellermus[at]gmail.com">email</a>/<a href="http://www.twitch.tv/youden">Twitch</a>)</div>
+<div id="footer">Made by delete 2011 (<a href="mailto:manellermus[at]gmail.com">email</a>/<a href="http://www.twitch.tv/ulph">Twitch</a>)</div>
 </div>
 </body>
 </html>
