@@ -19,4 +19,5 @@ http://youtu.be/_PVExv3357U
 
 # Current limitations
 
+- Only windows support.
 - Can only convert one file at a time.
