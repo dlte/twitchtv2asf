@@ -7,7 +7,7 @@
 # Optional settings.
 If you want to convert your XSplit recordings into asf you will need to make a symbolic link to it inside the twitchtv2asf folder.
 
-1. Start command via the start menu.
+1. Open a command prompt.
 2. Go to the twitchtv2asf folder (cd c:\wamp\www\twitchtv2asf)
 3. Make the link (mklink /J xsplit d:\fraps\xsplit\) !! The folder inside twitchtv2asf must be named xsplit in order to work !!
 
