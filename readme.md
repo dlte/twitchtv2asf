@@ -1,3 +1,5 @@
+# !! This repo is old and broken !!
+
 # "Install" guide.
 1. Change user and password in the .htpasswd file.
 2. Change the path to the htpasswd file inside the htaccess file. (if needed)
